@@ -99,19 +99,19 @@ void writeFile(unordered_map<string, int> done) {
     outputFile.close();
 }
 
-int meanCalc(unordered_map<string, int> done) {
+int averageCalc(unordered_map<string, int> done) {
     int sum = 0;
     int div = 0;
-    int mean = 0;
+    int average = 0;
 
         for ( const auto& entry : done ) {
         sum += entry.second;
         div++;
     }
 
-    mean = sum / div;
+    average = sum / div;
 
-    return mean;
+    return average;
 }
 
 bool checkDate(unordered_map<string,int> done) {
@@ -135,7 +135,7 @@ int main() {
     bool marked = false;
     int dayli = 4;
     int count = 0;
-    int mean = 0;
+    int average = 0;
 
     time_t now = time(0);
     tm *ltm = localtime(&now);
@@ -155,7 +155,7 @@ int main() {
         cout << "Already done, for edit, remove date from data.txt" << endl;
     }
 
-    mean = meanCalc(done);
+    average = averageCalc(done);
 
     string markedNot = "- [ ]";
     string markedDone = "- [X]";
@@ -164,14 +164,14 @@ int main() {
 
     string time = "";
 
-    if (countNotDone / ((int)mean * 30) < 1 ) {
-        time = (to_string(countNotDone / (int)mean) + " days");
+    if (countNotDone / ((int)average * 30) < 1 ) {
+        time = (to_string(countNotDone / (int)average) + " days");
     } else {
-        time = (to_string(countNotDone / ((int)mean * 30)) + " months");
+        time = (to_string(countNotDone / ((int)average * 30)) + " months");
     }
 
     cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
-    cout << ">>> You do mean: " << (int)mean <<" per day, and in that speed, you will finish in: " << time << "." << endl;
+    cout << ">>> You do average: " << (int)average <<" per day, and in that speed, you will finish in: " << time << "." << endl;
 
     gitPush((to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)));
 
