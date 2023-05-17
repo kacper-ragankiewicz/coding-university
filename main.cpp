@@ -137,7 +137,7 @@ int main() {
     int dayli = 4;
     int count = 0;
     int average = 0;
-    const char* gitCommand = "git config user.name user.email";
+    const char* gitCommand = "git config user.email";
     int result = system(gitCommand);
 
     time_t now = time(0);
