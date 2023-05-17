@@ -152,7 +152,7 @@ int main() {
             done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
             writeFile(done);
     } else {
-        cout << "Already done" << endl;
+        cout << "Already done, for edit, remove date from data.txt" << endl;
     }
 
     mean = meanCalc(done);
