@@ -145,9 +145,9 @@ int main() {
 
     if (result == 0) {
         git = true;
-        cout << "No github" << endl;
-    } else {
         cout << endl;
+    } else {
+        cout << "No github" << endl;
     }
 
     if ( git == true ) {
