@@ -29,6 +29,43 @@ int countCharacterSequence(const string& filename, const string& sequence) {
     return count;
 }
 
+void gitPull() {
+    const char* gitCommand = "git pull";
+    int result = system(gitCommand);
+    if (result == 0) {
+        cout << result << endl;
+    } else {
+        cout << result << endl;
+    }
+    return;
+}
+
+void gitPush(string date) {
+    const string gitCommitString = "git commit -m '" + date +"' ";\
+    const char* gitCommit = gitCommitString.c_str();
+    const char* gitCommand = "git add .";
+    const char* gitPush = "git push";
+    int result = system(gitCommand);
+    if (result == 0) {
+        cout << result << endl;
+        int result = system(gitCommit);
+        if (result == 0) {
+            cout << result << endl;
+            int result = system(gitPush);
+            if (result == 0) {
+                cout << result << endl;
+            } else {
+            cout << result << endl;
+            }
+        } else {
+            cout << result << endl;
+        }
+    } else {
+        cout << result << endl;
+    }
+    return;
+}
+
 void readFile(unordered_map<string, int>& done) {
     ifstream inputFile("data.txt");
     if (!inputFile) {
@@ -103,6 +140,8 @@ int main() {
     time_t now = time(0);
     tm *ltm = localtime(&now);
 
+    gitPull();
+
     readFile(done);
     marked = checkDate(done);
 
@@ -133,5 +172,8 @@ int main() {
 
     cout << "You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
     cout << "You do mean: " << (int)mean <<" per day, and in that speed, you will finish in: " << time << "." << endl;
+
+    gitPush((to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)));
+
     return 0;
 }
