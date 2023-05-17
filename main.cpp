@@ -41,10 +41,10 @@ void gitPull() {
 }
 
 void gitPush(string date) {
-    const string gitCommitString = "git commit -m '" + date +"' ";\
+    const string gitCommitString = "git commit -m '" + date +"' --quiet ";\
     const char* gitCommit = gitCommitString.c_str();
     const char* gitCommand = "git add .";
-    const char* gitPush = "git push";
+    const char* gitPush = "git push --quiet";
     int result = system(gitCommand);
     if (result == 0) {
         cout << result << endl;
