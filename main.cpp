@@ -30,7 +30,7 @@ int countCharacterSequence(const string& filename, const string& sequence) {
 }
 
 void gitPull() {
-    const char* gitCommand = "git pull";
+    const char* gitCommand = "git pull --quiet";
     int result = system(gitCommand);
     if (result == 0) {
         cout << result << endl;
