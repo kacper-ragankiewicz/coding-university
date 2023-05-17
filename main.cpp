@@ -158,8 +158,8 @@ int main() {
     marked = checkDate(done);
 
     if ( marked == false ) {
-        cout << "You didnt report your work today" << endl;
-        cout << "Give a number: ";
+        cout << ">>> You didnt report your work today" << endl;
+        cout << ">> Give a number: ";
         cin >> count;
             done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
             writeFile(done);
