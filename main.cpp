@@ -130,7 +130,7 @@ bool checkDate(unordered_map<string,int> done) {
 
 int main() {
     unordered_map<string, int> done = {};
-    string filename = "README-pl.md";
+    string filename = "coding_university.md";
 
     bool marked = false;
     int dayli = 4;
