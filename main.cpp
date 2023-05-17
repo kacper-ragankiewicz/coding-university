@@ -170,8 +170,8 @@ int main() {
         time = (to_string(countNotDone / ((int)mean * 30)) + " months");
     }
 
-    cout << "You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
-    cout << "You do mean: " << (int)mean <<" per day, and in that speed, you will finish in: " << time << "." << endl;
+    cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
+    cout << ">>> You do mean: " << (int)mean <<" per day, and in that speed, you will finish in: " << time << "." << endl;
 
     gitPush((to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)));
 
