@@ -67,7 +67,7 @@ void gitPush(string date) {
 }
 
 void readFile(unordered_map<string, int>& done) {
-    ifstream inputFile("data.txt");
+    ifstream inputFile("date.txt");
     if (!inputFile) {
         cerr << "Failed to open the file for reading." << endl;
         // return 1;
@@ -87,7 +87,7 @@ void readFile(unordered_map<string, int>& done) {
 }
 
 void writeFile(unordered_map<string, int> done) {
-    ofstream outputFile("data.txt");
+    ofstream outputFile("date.txt");
     if (!outputFile) {
         cerr << "Failed to open the file for writing." << endl;
         // return 1;
@@ -133,14 +133,25 @@ int main() {
     string filename = "coding_university.md";
 
     bool marked = false;
+    bool git = false;
     int dayli = 4;
     int count = 0;
     int average = 0;
+    const char* gitCommand = "git status";
+    int result = system(gitCommand);
 
     time_t now = time(0);
     tm *ltm = localtime(&now);
 
+    if (result == 0) {
+        git = true;
+    } else {
+        cout << "No github" << endl;
+    }
+
+    if ( git == true ) {
     gitPull();
+    }
 
     readFile(done);
     marked = checkDate(done);
@@ -173,7 +184,9 @@ int main() {
     cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
     cout << ">>> You do average: " << (int)average <<" per day, and in that speed, you will finish in: " << time << "." << endl;
 
-    gitPush((to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)));
+    if( git == true ) {
+        gitPush((to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)));
+    }
 
     return 0;
 }
