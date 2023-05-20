@@ -128,6 +128,25 @@ bool checkDate(unordered_map<string,int> done) {
     return marked;
 }
 
+string getPreviousValue(unordered_map<string, int>& map, const string& key) {
+    string previousValue;
+    bool found = false;
+
+    for (const auto& pair : map) {
+        if (pair.first == key) {
+            found = true;
+            break;
+        }
+        previousValue = pair.second;
+    }
+
+    if (found) {
+        return previousValue;
+    } else {
+        return "";  // Return an empty string if the key is not found or no previous element exists
+    }
+}
+
 int main() {
     unordered_map<string, int> done = {};
     string filename = "coding_university.md";
@@ -157,22 +176,23 @@ int main() {
     readFile(done);
     marked = checkDate(done);
 
+    string markedNot = "- [ ]";
+    string markedDone = "- [X]";
+
+    int countNotDone = countCharacterSequence(filename, markedNot);
+    int countDone = countCharacterSequence(filename, markedDone);
+
     if ( marked == false ) {
-        cout << ">>> You didnt report your work today" << endl;
-        cout << ">> Give a number: ";
-        cin >> count;
-            done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
-            writeFile(done);
+        string prev = getPreviousValue(done, (to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year)) );
+        cout << prev << endl;
+        done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
+        writeFile(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
 
     average = averageCalc(done);
 
-    string markedNot = "- [ ]";
-    string markedDone = "- [X]";
-    int countNotDone = countCharacterSequence(filename, markedNot);
-    int countDone = countCharacterSequence(filename, markedDone);
 
     string time = "";
 
