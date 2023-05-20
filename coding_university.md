@@ -608,11 +608,11 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 ## Więcej wiedzy
 
 - ### Binary search
-    - [ ] [Binary Search (wideo)](https://www.youtube.com/watch?v=D5SrAga1pno)
-    - [ ] [Binary Search (wideo)](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search)
-    - [ ] [detail](https://www.topcoder.com/community/competitive-programming/tutorials/binary-search/)
-    - [ ] [[Review] Binary search in 4 minutes (video)](https://youtu.be/fDKIpRe8GW4)
-    - [ ] Implement:
+    - [X] [Binary Search (wideo)](https://www.youtube.com/watch?v=D5SrAga1pno)
+    - [X] [Binary Search (wideo)](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search)
+    - [X] [detail](https://www.topcoder.com/community/competitive-programming/tutorials/binary-search/)
+    - [X] [[Review] Binary search in 4 minutes (video)](https://youtu.be/fDKIpRe8GW4)
+    - [X] Implement:
         - binary search (on sorted array of integers)
         - binary search using recursion
 
