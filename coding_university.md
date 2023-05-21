@@ -469,7 +469,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 - [X] [Harvard CS50 - Notacja asymptotyczna (wideo)](https://www.youtube.com/watch?v=iOq5kSKqeR4)
 - [X] [Big O Notations (ogólny szybki samouczek) (wideo)]()
 - [X] [Big O Notation (oraz Omega i Theta) - najlepsze wyjaśnienia matematyczne (wideo)](https://www.youtube.com/watch?v=ei-A_wy5Yxw&index=2&list=PL1BaGV1cIH4UhkL8a9bJGG356covJ76qN)
-- [ ] Skiena:
+- [X] Skiena:
     - [wideo](https://www.youtube.com/watch?v=gSyDMtdPNpU&index=2&list=PLOtl7M3yp-DV69F32zdK7YJcNXpTunF2b)
     - [prezentacja](http://www3.cs.stonybrook.edu/~algorith/video-lectures/2007/lecture2.pdf)
 - [ ] [A Gentle Introduction to Algorithm Complexity Analysis](http://discrete.gr/complexity/)
