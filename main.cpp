@@ -113,7 +113,6 @@ int averageCalc(unordered_map<string, int> done) {
         for (; it != done.end(); ++it) {
             sum += abs(it->second - prevEntry);
             prevEntry = it->second;
-            cout << "sum " << sum <<endl;
             div++;
         }
     }
@@ -156,24 +155,18 @@ string getYesterdayDate() {
     return dateString;
 }
 
-bool dateComparator(const std::string& date1, const std::string& date2) {
-    // Convert date strings to sortable format (yyyy/mm/dd)
-    std::string sortableDate1 = date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2);
-    std::string sortableDate2 = date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2);
+bool dateComparator(const string& date1, const string& date2) {
+    string sortableDate1 = date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2);
+    string sortableDate2 = date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2);
 
     return sortableDate1 < sortableDate2;
 }
 
-void sortMapByDate(std::unordered_map<std::string, int>& data) {
-    // Copy the key-value pairs to a vector for sorting
-    std::vector<std::pair<std::string, int>> temp(data.begin(), data.end());
-
-    // Sort the vector based on the keys (dates)
-    std::sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
+void sortMapByDate(unordered_map<string, int>& data) {
+    vector<pair<string, int>> temp(data.begin(), data.end());
+    sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
         return dateComparator(a.first, b.first);
     });
-
-    // Copy the sorted key-value pairs back to the unordered_map
     data.clear();
     for (const auto& pair : temp) {
         data[pair.first] = pair.second;
@@ -207,6 +200,7 @@ int main() {
 
     readFile(done);
     sortMapByDate(done);
+
     marked = checkDate(done);
 
     string markedNot = "- [ ]";
