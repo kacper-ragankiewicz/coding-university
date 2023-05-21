@@ -112,10 +112,9 @@ int averageCalc(unordered_map<string, int> done) {
         for (; it != done.end(); ++it) {
             sum += it->second - prevEntry;
             prevEntry = it->second;
+            div++;
         }
     }
-
-    div = 3;
 
     average = sum / div;
 
