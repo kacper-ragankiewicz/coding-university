@@ -190,7 +190,6 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    average = averageCalc(done);
 
     if ( marked == false ) {
         // string yesterday = getYesterdayDate();
@@ -206,8 +205,10 @@ int main() {
         // }
         done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
         writeFile(done);
+        average = averageCalc(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
+        average = averageCalc(done);
     }
 
 
