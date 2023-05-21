@@ -5,6 +5,7 @@
 #include <vector>
 #include <ctime>
 #include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
@@ -155,17 +156,39 @@ string getYesterdayDate() {
     return dateString;
 }
 
+bool dateComparator(const std::string& date1, const std::string& date2) {
+    // Convert date strings to sortable format (yyyy/mm/dd)
+    std::string sortableDate1 = date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2);
+    std::string sortableDate2 = date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2);
+
+    return sortableDate1 < sortableDate2;
+}
+
+void sortMapByDate(std::unordered_map<std::string, int>& data) {
+    // Copy the key-value pairs to a vector for sorting
+    std::vector<std::pair<std::string, int>> temp(data.begin(), data.end());
+
+    // Sort the vector based on the keys (dates)
+    std::sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
+        return dateComparator(a.first, b.first);
+    });
+
+    // Copy the sorted key-value pairs back to the unordered_map
+    data.clear();
+    for (const auto& pair : temp) {
+        data[pair.first] = pair.second;
+    }
+}
+
 int main() {
     unordered_map<string, int> done = {};
     string filename = "coding_university.md";
+    const char* gitCommand = "git config user.email";
 
     bool marked = false;
     bool git = false;
-    int dayli = 4;
     int count = 0;
     int average = 0;
-    int workdone = 0;
-    const char* gitCommand = "git config user.email";
     int result = system(gitCommand);
 
     time_t now = time(0);
@@ -183,6 +206,7 @@ int main() {
     }
 
     readFile(done);
+    sortMapByDate(done);
     marked = checkDate(done);
 
     string markedNot = "- [ ]";
@@ -192,26 +216,13 @@ int main() {
 
 
     if ( marked == false ) {
-        // string yesterday = getYesterdayDate();
-        // auto it = done.find(yesterday);
-        // if ( it != done.end()) {
-            // cout << ">>> Found yesterday." << endl;
-        // count = countDone;
-        // } else {
-            // cout << ">>> You didn't report your work today" << endl;
-            // cout << ">> Give a number: ";
-            // cin >> workdone;
         count = countDone;
-        // }
         done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
         writeFile(done);
-        average = averageCalc(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
-        average = averageCalc(done);
     }
-
-
+    average = averageCalc(done);
 
     string time = "";
 
