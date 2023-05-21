@@ -128,6 +128,25 @@ bool checkDate(unordered_map<string,int> done) {
     return marked;
 }
 
+string getYesterdayDate() {
+    time_t now = time(nullptr);
+    tm* ltm = localtime(&now);
+
+    // Get yesterday's date
+    tm yesterday = *ltm;
+    yesterday.tm_mday--;
+
+    tm* yesterdayLtm = &yesterday;
+
+    // Format the date as a string
+    string dateString =
+        to_string(yesterdayLtm->tm_mday) + "/" +
+        to_string(1 + yesterdayLtm->tm_mon) + "/" +
+        to_string(1900 + yesterdayLtm->tm_year);
+
+    return dateString;
+}
+
 int main() {
     unordered_map<string, int> done = {};
     string filename = "coding_university.md";
@@ -137,6 +156,7 @@ int main() {
     int dayli = 4;
     int count = 0;
     int average = 0;
+    int workdone = 0;
     const char* gitCommand = "git config user.email";
     int result = system(gitCommand);
 
@@ -157,22 +177,31 @@ int main() {
     readFile(done);
     marked = checkDate(done);
 
+    string markedNot = "- [ ]";
+    string markedDone = "- [X]";
+    int countNotDone = countCharacterSequence(filename, markedNot);
+    int countDone = countCharacterSequence(filename, markedDone);
+
     if ( marked == false ) {
-        cout << ">>> You didn't report your work today" << endl;
-        cout << ">> Give a number: ";
-        cin >> count;
-            done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
-            writeFile(done);
+        string yesterday = getYesterdayDate();
+        auto it = done.find(yesterday);
+        if ( it != done.end()) {
+            cout << "Key found" << endl;
+            count = (done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] - done[yesterday]);
+        } else {
+            cout << ">>> You didn't report your work today" << endl;
+            cout << ">> Give a number: ";
+            cin >> workdone;
+            count = workdone;
+        }
+        done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
+        writeFile(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
 
     average = averageCalc(done);
 
-    string markedNot = "- [ ]";
-    string markedDone = "- [X]";
-    int countNotDone = countCharacterSequence(filename, markedNot);
-    int countDone = countCharacterSequence(filename, markedDone);
 
     string time = "";
 
