@@ -192,17 +192,17 @@ int main() {
 
 
     if ( marked == false ) {
-        string yesterday = getYesterdayDate();
-        auto it = done.find(yesterday);
-        if ( it != done.end()) {
-            cout << ">>> Found yesterday." << endl;
-            count = countDone;
-        } else {
+        // string yesterday = getYesterdayDate();
+        // auto it = done.find(yesterday);
+        // if ( it != done.end()) {
+            // cout << ">>> Found yesterday." << endl;
+        // count = countDone;
+        // } else {
             // cout << ">>> You didn't report your work today" << endl;
             // cout << ">> Give a number: ";
             // cin >> workdone;
-            count = countDone;
-        }
+        count = countDone;
+        // }
         done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
         writeFile(done);
         average = averageCalc(done);
