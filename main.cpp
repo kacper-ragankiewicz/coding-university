@@ -104,16 +104,18 @@ int averageCalc(unordered_map<string, int> done) {
     int div = 0;
     int average = 0;
 
-    bool firstEntry = true;
+    auto it = done.begin();
+    if (it != done.end()) {
+        int prevEntry = it->second;
+        ++it; // Move to the second entry
 
-    for ( const auto& entry : done ) {
-        if (firstEntry) {
-            firstEntry = false;
-            continue; // Skip the first entry
+        for (; it != done.end(); ++it) {
+            sum += it->second - prevEntry;
+            prevEntry = it->second;
         }
-        sum += entry.second;
-        div++;
     }
+
+    div = 3;
 
     average = sum / div;
 
