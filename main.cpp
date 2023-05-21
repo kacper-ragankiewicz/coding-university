@@ -101,7 +101,7 @@ void writeFile(unordered_map<string, int> done) {
 
 int averageCalc(unordered_map<string, int> done) {
     int sum = 0;
-    int div = 1;
+    int div = 0;
     int average = 0;
 
     auto it = done.begin();
@@ -112,7 +112,7 @@ int averageCalc(unordered_map<string, int> done) {
         for (; it != done.end(); ++it) {
             sum += abs(it->second - prevEntry);
             prevEntry = it->second;
-            cout << "sum" << sum << div <<endl;
+            cout << "sum " << sum <<endl;
             div++;
         }
     }
