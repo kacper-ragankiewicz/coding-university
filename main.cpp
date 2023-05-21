@@ -193,7 +193,7 @@ int main() {
         auto it = done.find(yesterday);
         if ( it != done.end()) {
             cout << ">>> Found yesterday." << endl;
-            count = int(countDone - done[yesterday]);
+            count = countDone;
         } else {
             // cout << ">>> You didn't report your work today" << endl;
             // cout << ">> Give a number: ";
