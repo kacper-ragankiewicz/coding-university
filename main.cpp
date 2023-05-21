@@ -104,7 +104,13 @@ int averageCalc(unordered_map<string, int> done) {
     int div = 0;
     int average = 0;
 
-        for ( const auto& entry : done ) {
+    bool firstEntry = true;
+
+    for ( const auto& entry : done ) {
+        if (firstEntry) {
+            firstEntry = false;
+            continue; // Skip the first entry
+        }
         sum += entry.second;
         div++;
     }
@@ -189,6 +195,9 @@ int main() {
             cout << ">>> Found yesterday." << endl;
             count = int(countDone - done[yesterday]);
         } else {
+            // cout << ">>> You didn't report your work today" << endl;
+            // cout << ">> Give a number: ";
+            // cin >> workdone;
             count = countDone;
         }
         done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] = count;
