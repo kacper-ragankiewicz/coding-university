@@ -644,7 +644,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 ## Drzewa
 
 - ### Drzewa - uwagi & zarys
-    - [ ] [Series: Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/95qda/trees)
+    - [X] [Series: Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/95qda/trees)
     - podstawy budowy drzewa
     - traversal (ścieżki)
     - manipulation algorithms

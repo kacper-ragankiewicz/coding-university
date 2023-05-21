@@ -187,7 +187,7 @@ int main() {
         auto it = done.find(yesterday);
         if ( it != done.end()) {
             cout << "Key found" << endl;
-            count = (done[(to_string(ltm->tm_mday) + "/" + to_string(1 + ltm->tm_mon) + '/' + to_string(1900 + ltm->tm_year))] - done[yesterday]);
+            count = int(countDone - done[yesterday]);
         } else {
             cout << ">>> You didn't report your work today" << endl;
             cout << ">> Give a number: ";
