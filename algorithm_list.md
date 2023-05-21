@@ -409,4 +409,64 @@ def binary_search(arr, target, left right):
 		return binary_search(arr, target, left, mid-1)
 }
 
+# Bubble Sort {
+# Python
+def buble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return(arr)
+   
+# Python [recursive]
+def bubble_sort(arr):
+    n = len(arr)
+
+    # Base case: If the array is already sorted, return
+    if n <= 1:
+        return arr
+
+    # Perform a single pass of bubble sort
+    for i in range(n - 1):
+        if arr[i] > arr[i + 1]:
+            arr[i], arr[i + 1] = arr[i + 1], arr[i]
+
+    # Recursively call bubble_sort on the reduced array
+    bubble_sort(arr[:n - 1])
+
+    return arr 
+
+}
+
+# Separate the numbers and check if they are beutifule {
+def separateNumbers(s):    
+    if len(s)==1:
+        print("NO")
+        return    
+    for i in range(1, len(s)//2+1): 
+        genstr = s[:i]
+        prev = int(genstr)        
+        while len(genstr) < len(s):             
+            next = prev+1
+            genstr+=str(next)
+            prev = next        
+        if genstr == s:
+            print("YES", s[:i])
+            return    
+    print("NO")
+}
+
+# Getting thr biggest field of value for graf:
+def maxArea(self, height: List[int]) -> int:
+        left,right,answer=0,len(height)-1,0
+        while left<=right:
+            area=min(height[right],height[left])*(right-left)
+            answer=max(answer,area)
+            if height[right]>height[left]:
+                left+=1
+            else:
+                right-=1
+        return answer
+
 
