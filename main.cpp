@@ -101,7 +101,7 @@ void writeFile(unordered_map<string, int> done) {
 
 int averageCalc(unordered_map<string, int> done) {
     int sum = 0;
-    int div = 0;
+    int div = 1;
     int average = 0;
 
     auto it = done.begin();
