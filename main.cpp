@@ -176,7 +176,7 @@ int main() {
 
     string time = "";
 
-    if (countNotDone / ((int)average * 30) < 1 ) {
+    if (countNotDone / ((int)average * 30) < 2 ) {
         time = (to_string(countNotDone / (int)average) + " days");
     } else {
         time = (to_string(countNotDone / ((int)average * 30)) + " months");
