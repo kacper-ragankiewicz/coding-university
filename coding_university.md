@@ -644,11 +644,11 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 ## Drzewa
 
 - ### Drzewa - uwagi & zarys
-    - [X] [Series: Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/95qda/trees)
+    - [ ] [Series: Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/95qda/trees)
     - podstawy budowy drzewa
     - traversal (ścieżki)
     - manipulation algorithms
-    - [X] [BFS(breadth-first search) and DFS(depth-first search) (wideo)](https://www.youtube.com/watch?v=uWL6FJhq5fM)
+    - [ ] [BFS(breadth-first search) and DFS(depth-first search) (wideo)](https://www.youtube.com/watch?v=uWL6FJhq5fM)
         - BFS notes:
            - level order (BFS, using queue)
            - złożoność czasowa: O(n)
