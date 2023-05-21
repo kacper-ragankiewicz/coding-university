@@ -648,7 +648,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - podstawy budowy drzewa
     - traversal (ścieżki)
     - manipulation algorithms
-    - [ ] [BFS(breadth-first search) and DFS(depth-first search) (wideo)](https://www.youtube.com/watch?v=uWL6FJhq5fM)
+    - [X] [BFS(breadth-first search) and DFS(depth-first search) (wideo)](https://www.youtube.com/watch?v=uWL6FJhq5fM)
         - BFS notes:
            - level order (BFS, using queue)
            - złożoność czasowa: O(n)
