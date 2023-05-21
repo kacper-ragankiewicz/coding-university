@@ -190,7 +190,6 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    average = averageCalc(done);
 
     if ( marked == false ) {
         string yesterday = getYesterdayDate();
@@ -210,6 +209,7 @@ int main() {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
 
+    average = averageCalc(done);
 
 
     string time = "";
