@@ -439,6 +439,57 @@ def bubble_sort(arr):
 
 }
 
+# Binary Trees {
+
+graph = {
+'A' : ['B', 'G'],
+'B' : ['C', 'D', 'E'],
+'C' : [], 
+'D' : [],
+'E' : ['F'],
+'F' : [],
+'G' : ['H'],
+'H' : ['I'],
+'I' : [],
+}
+
+# Python Breadth-First Search
+def bfs(graph, node):
+	visited = []
+	queue = []
+	
+	visited.append(node)
+	queue.append(node)
+	
+	while queue:
+		s = queue.pop(0)
+		print(s, end = " ")
+		
+		for n in graph[s]:
+			if n not in visited:
+				visited.append(n)
+				queue.append(n) 
+
+# Python Depth-First Search (DFS)
+from collections import deque
+
+def dfs(graph, node):
+	visited = []
+	stack = deque()
+	
+	visited.append(node)
+	stack.append(node)
+	
+	while stack:
+		s = stack.pop()
+		print(s, end = " ")
+		
+		for n in reversed(graph[s]):
+			if n not in visited:
+				visited.append(n)
+				stack.append(n)
+}
+
 # Separate the numbers and check if they are beutifule {
 def separateNumbers(s):    
     if len(s)==1:
@@ -468,5 +519,41 @@ def maxArea(self, height: List[int]) -> int:
             else:
                 right-=1
         return answer
+        
+# Looking for pairs that have min difference between them in an array
+# Python
+def closestNumbers(arr):
+    arr = sorted(arr)
+    n = len(arr)
+    seen = {}
+    j = 0
+    dif = 10000
+    for i in range(len(arr)-1):
+        dif = min(arr[i + 1] - arr[i], dif)
+        if arr[i + 1] - arr[i] <= dif:
+            dif = arr[i + 1] - arr[i]
+            seen[j] = [arr[i], arr[i+1]]
+            j += 1
+        print(dif)
+    array = []
+    for i in range(len(seen.values())):
+        if seen[i][1] - seen[i][0] != dif:
+            del seen[i]
+        else:
+            array.append(seen[i][0])
+            array.append(seen[i][1])
+    return array
+    
+# Coverting int to roman numbers:
+def intToRoman(self, num: int) -> str:
+	values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+	symbols = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
+	res = ""
+	while num > 0:
+	    for i, v in enumerate(values):
+		while v <= num:
+		    res += symbols[i]
+		    num -= v
+	return res
 
 
