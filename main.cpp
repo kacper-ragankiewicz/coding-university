@@ -249,6 +249,5 @@ int main() {
 
     cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
     cout << ">>> You do average: " << (int)average <<" per day, and in that speed, you will finish in: " << time << "." << endl;
-    cout << "Hello" << endl;
     return 0;
 }
