@@ -545,15 +545,16 @@ def closestNumbers(arr):
     return array
     
 # Coverting int to roman numbers:
-def intToRoman(self, num: int) -> str:
-	values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-	symbols = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
-	res = ""
-	while num > 0:
-	    for i, v in enumerate(values):
-		while v <= num:
-		    res += symbols[i]
-		    num -= v
-	return res
+# Python hash table
+def romanToInt(self, s: str) -> int:
+        roman={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        number=0
+        for i in range(len(s)-1):
+            if roman[s[i]] < roman[s[(i+1)]]:
+                number-=roman[s[i]]
+            else:
+                number+=roman[s[i]]
+        return number+roman[s[-1]]
+
 
 
