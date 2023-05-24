@@ -209,9 +209,10 @@ int main() {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
 
-    sortMapByDate(done);
-
     average = averageCalc(done);
+
+    sortMapByDate(done);
+    
     string time = "";
 
     if (countNotDone / ((int)average * 30) < 2 ) {
