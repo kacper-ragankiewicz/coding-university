@@ -110,7 +110,7 @@ int averageCalc(const unordered_map<string, int>& done) {
         ++it;
         for (; it != done.end(); ++it) {
             sum += abs(it->second - prevEntry);
-            cout << abs(it->second - prevEntry) << endl;
+            cout << abs(it->second - prevEntry) << " ";
             prevEntry = it->second;
             div++;
         }
@@ -220,6 +220,7 @@ int main() {
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
+
     sortMapByDate(done);
 
     average = averageCalc(done);
