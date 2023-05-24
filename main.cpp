@@ -110,6 +110,7 @@ int averageCalc(const std::unordered_map<std::string, int>& done) {
         ++it; // Move to the next entry
         for (; it != done.end(); ++it) {
             sum += std::abs(prevEntry - it->second);
+            cout << it->second << " - " << prevEntry << endl;
             prevEntry = it->second;
             div++;
         }
