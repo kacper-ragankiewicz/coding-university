@@ -106,8 +106,8 @@ int averageCalc(const std::unordered_map<std::string, int>& done) {
         // Perform operations on the value
         std::cout << "Value: " << value << std::endl;
 
-        return 1;
     }
+    return 1;
 }
 
 bool checkDate(unordered_map<string,int> done) {
