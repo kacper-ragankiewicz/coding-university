@@ -101,7 +101,7 @@ void writeFile(unordered_map<string, int> done) {
 }
 
 int averageCalc(unordered_map<string, int> done) {
-    int sum = 1;
+    int sum = 0;
     int div = 0;
     int average = 0;
 
