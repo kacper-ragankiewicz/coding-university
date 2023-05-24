@@ -100,26 +100,27 @@ void writeFile(unordered_map<string, int> done) {
     outputFile.close();
 }
 
-int averageCalc(unordered_map<string, int> done) {
+int averageCalc(const std::unordered_map<std::string, int>& done) {
     int sum = 0;
     int div = 0;
-    int average = 0;
 
     auto it = done.begin();
     if (it != done.end()) {
         int prevEntry = it->second;
-        ++it; // Move to the second entry
+        ++it; // Move to the next entry
         for (; it != done.end(); ++it) {
-            cout <<  it->second << " " << prevEntry<< endl;
-            sum += abs(it->second - prevEntry);
+            sum += std::abs(it->second - prevEntry);
             prevEntry = it->second;
             div++;
         }
     }
 
-    average = sum / div;
+    if (div == 0) {
+        return 0; // Handle division by zero case
+    }
 
-    return int(average);
+    int average = sum / div;
+    return average;
 }
 
 bool checkDate(unordered_map<string,int> done) {
