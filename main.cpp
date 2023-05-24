@@ -145,13 +145,10 @@ string getYesterdayDate() {
     time_t now = time(nullptr);
     tm* ltm = localtime(&now);
 
-    // Get yesterday's date
     tm yesterday = *ltm;
     yesterday.tm_mday--;
 
     tm* yesterdayLtm = &yesterday;
-
-    // Format the date as a string
     string dateString =
         to_string(yesterdayLtm->tm_mday) + "/" +
         to_string(1 + yesterdayLtm->tm_mon) + "/" +
@@ -161,10 +158,8 @@ string getYesterdayDate() {
 }
 
 bool dateComparator(const string& date1, const string& date2) {
-    // Convert date strings to sortable format (yyyy/mm/dd)
     string sortableDate1 = date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2);
     string sortableDate2 = date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2);
-
     return sortableDate1 < sortableDate2;
 }
 
@@ -173,7 +168,6 @@ void sortMapByDate(unordered_map<string, int>& data) {
     sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
         return dateComparator(a.first, b.first);
     });
-
     data.clear();
     for (const auto& pair : temp) {
         data[pair.first] = pair.second;
@@ -199,7 +193,6 @@ int main() {
     string monthStr = (month < 10) ? "0" + to_string(month) : to_string(month);
     int year = 1900 + ltm->tm_year;
 
-
     if (result == 0) {
         git = true;
         cout << endl;
@@ -219,7 +212,6 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    sortMapByDate(done);
 
     if ( marked == false ) {
         count = countDone;
@@ -228,8 +220,9 @@ int main() {
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
-    average = averageCalc(done);
+    sortMapByDate(done);
 
+    average = averageCalc(done);
     string time = "";
 
     if (countNotDone / ((int)average * 30) < 2 ) {
