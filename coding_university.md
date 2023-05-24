@@ -489,7 +489,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 
 - ### Arrays
     - Zaimplementuj wektor automatycznie zmieniający rozmiar.
-    - [ ] Opis:
+    - [X] Opis:
         - [Arrays (wideo)](https://www.coursera.org/learn/data-structures/lecture/OsBSF/arrays)
         - [UC Berkeley CS61B - Linear and Multi-Dim Arrays (wideo)](https://archive.org/details/ucberkeley_webcast_Wp8oiO_CZZE) (Start watching from 15m 32s)
         - [Dynamic Arrays (wideo)](https://www.coursera.org/learn/data-structures/lecture/EwbnV/dynamic-arrays)
@@ -524,9 +524,9 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - [ ] Opis:
         - [ ] [Singly Linked Lists (wideo)](https://www.coursera.org/learn/data-structures/lecture/kHhgK/singly-linked-lists)
         - [X] [CS 61B - Linked Lists 1 (wideo)](https://archive.org/details/ucberkeley_webcast_htzJdKoEmO0)
-        - [ ] [CS 61B - Linked Lists 2 (wideo)](https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w)
+        - [X] [CS 61B - Linked Lists 2 (wideo)](https://archive.org/details/ucberkeley_webcast_-c4I3gFYe3w)
         - [X] [[Review] Linked lists in 4 minutes (video)](https://youtu.be/F8AbOfQwl1c)
-    - [ ] [C Code (wideo)](https://www.youtube.com/watch?v=QN6FPiD0Gzo)
+    - [X] [C Code (wideo)](https://www.youtube.com/watch?v=QN6FPiD0Gzo)
             - not the whole video, just portions about Node struct and memory allocation.
     - [ ] Linked List vs Arrays:
         - [Core Linked Lists Vs Arrays (wideo)](https://www.coursera.org/learn/data-structures-optimizing-performance/lecture/rjBs9/core-linked-lists-vs-arrays)
@@ -573,7 +573,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
         - dequeue() - returns value and removes least recently added element
         - empty()
         - full()
-    - [ ] Cost:
+    - [X] Cost:
         - a bad implementation using linked list where you enqueue at head and dequeue at tail would be O(n)
             because you'd need the next to last element, causing a full traversal each dequeue
         - enqueue: O(1) (amortized, linked list and array [probing])

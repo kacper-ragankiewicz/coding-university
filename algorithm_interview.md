@@ -555,6 +555,21 @@ def romanToInt(self, s: str) -> int:
             else:
                 number+=roman[s[i]]
         return number+roman[s[-1]]
+        
+# Checking the longest char patern in the array of strings
+
+# Python
+def longestCommonPrefix(v: List[str]) -> str:
+	ans = ""
+	v = sorted(v)
+	first = v[0]
+	last = v[-1]
+	
+	for i in range(min(len(first), len(last)):
+		if first[i]!=last[i]:
+			return ans
+		ans += first[i]
+	return ans
 
 
 
