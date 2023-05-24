@@ -200,6 +200,7 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
+    sortMapByDate(done);
 
     if ( marked == false ) {
         count = countDone;
@@ -211,8 +212,7 @@ int main() {
 
     average = averageCalc(done);
 
-    sortMapByDate(done);
-    
+
     string time = "";
 
     if (countNotDone / ((int)average * 30) < 2 ) {
