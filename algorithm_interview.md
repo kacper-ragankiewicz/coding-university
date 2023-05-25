@@ -570,6 +570,26 @@ def longestCommonPrefix(v: List[str]) -> str:
 			return ans
 		ans += first[i]
 	return ans
+	
+# Caesar Cipher
+def caesarCipher(s, k):
+    a="abcdefghijklmnopqrstuvwxyz"
+    k=k%26
+    b=a[k:]+a[:k]
+    d=''
+    for i in s:
+        if i.isalpha() :
+            if i not in "-,'":
+                if i.islower():
+                    c=a.find(i)
+                    d=d+b[c]
+                else:
+                    c=a.find(i.lower())
+                    d=d+b[c].upper()  
+            
+        else:
+            d=d+i         
+    return d 
 
 
 

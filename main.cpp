@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <ctime>
-#include <unordered_map>
+#include <map>
 #include <algorithm>
 
 using namespace std;
@@ -67,7 +67,7 @@ void gitPush(string date) {
     return;
 }
 
-void readFile(unordered_map<string, int>& done) {
+void readFile(map<string, int>& done) {
     ifstream inputFile("date.txt");
     if (!inputFile) {
         cerr << "Failed to open the file for reading." << endl;
@@ -87,7 +87,7 @@ void readFile(unordered_map<string, int>& done) {
     inputFile.close();
 }
 
-void writeFile(unordered_map<string, int> done) {
+void writeFile(map<string, int> done) {
     ofstream outputFile("date.txt");
     if (!outputFile) {
         cerr << "Failed to open the file for writing." << endl;
@@ -100,17 +100,30 @@ void writeFile(unordered_map<string, int> done) {
     outputFile.close();
 }
 
-int averageCalc(const std::unordered_map<std::string, int>& done) {
-    for (const auto& pair : done) {
-        int value = pair.second;
-        // Perform operations on the value
-        std::cout << "Value: " << value << std::endl;
+int averageCalc(const std::map<std::string, int>& done) {
+    int sum = 0;
+    int div = 1;
 
+    auto it = done.begin();
+    if (it != done.end()) {
+        int prevEntry = it->second;
+        ++it; // Move to the next entry
+        for (; it != done.end(); ++it) {
+            sum += std::abs(prevEntry - it->second);
+            prevEntry = it->second;
+            div++;
+        }
     }
-    return 1;
+
+    if (div == 0) {
+        return 0; // Handle division by zero case
+    }
+
+    int average = sum / div;
+    return average;
 }
 
-bool checkDate(unordered_map<string,int> done) {
+bool checkDate(map<string,int> done) {
     time_t now = time(0);
     tm *ltm = localtime(&now);
     bool marked = false;
@@ -146,14 +159,15 @@ string getYesterdayDate() {
 }
 
 bool dateComparator(const string& date1, const string& date2) {
-    string sortableDate1 = date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2);
-    string sortableDate2 = date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2);
+    int sortableDate1 = stoi(date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2));
+    int sortableDate2 = stoi(date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2));
+
     return sortableDate1 < sortableDate2;
 }
 
-void sortMapByDate(unordered_map<string, int>& data) {
+void sortMapByDate(map<string, int>& data) {
     vector<pair<string, int>> temp(data.begin(), data.end());
-    sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
+    std::stable_sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
         return dateComparator(a.first, b.first);
     });
     data.clear();
@@ -163,7 +177,7 @@ void sortMapByDate(unordered_map<string, int>& data) {
 }
 
 int main() {
-    unordered_map<string, int> done = {};
+    map<string, int> done = {};
     string filename = "coding_university.md";
     const char* gitCommand = "git config user.email";
 
@@ -204,7 +218,8 @@ int main() {
 
     if ( marked == false ) {
         count = countDone;
-        done[(to_string(day) + "/" + monthStr + '/' + to_string(year))] = count;
+        done.insert({(to_string(day) + "/" + monthStr + '/' + to_string(year)), count});
+        // done[(to_string(day) + "/" + monthStr + '/' + to_string(year))] = count;
         writeFile(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;

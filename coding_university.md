@@ -583,7 +583,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 - ### Hash table - tablica mieszająca 
     - [ ] Materiały wideo:
         - [X] [Hashing with Chaining (wideo)](https://www.youtube.com/watch?v=0M_kIqhwbFo&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&index=8)
-        - [ ] [Table Doubling, Karp-Rabin (wideo)](https://www.youtube.com/watch?v=BRO7mVIFt08&index=9&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb)
+        - [X] [Table Doubling, Karp-Rabin (wideo)](https://www.youtube.com/watch?v=BRO7mVIFt08&index=9&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb)
         - [ ] [Open Addressing, Cryptographic Hashing (wideo)](https://www.youtube.com/watch?v=rvdJDijO2Ro&index=10&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb)
         - [ ] [PyCon 2010: The Mighty Dictionary (wideo)](https://www.youtube.com/watch?v=C4Kc8xzcA68)
         - [ ] [(Zaawansowane) Randomization: Universal & Perfect Hashing (wideo)](https://www.youtube.com/watch?v=z0lJ2k0sl1g&list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp&index=11)
@@ -697,7 +697,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
 
 - ### Sterta / kolejka priorytetowa / sterta binarna
     - przedstawiane jako drzewo, ale zwykle liniowo w pamięci (array, linked list)
-    - [ ] [Sterta](https://en.wikipedia.org/wiki/Heap_(data_structure))
+    - [X] [Sterta](https://en.wikipedia.org/wiki/Heap_(data_structure))
     - [ ] [Wprowadzenie (wideo)](https://www.coursera.org/learn/data-structures/lecture/2OpTs/introduction)
     - [ ] [Naive Implementations (wideo)](https://www.coursera.org/learn/data-structures/lecture/z3l9N/naive-implementations)
     - [ ] [Binary Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/GRV2q/binary-trees)
