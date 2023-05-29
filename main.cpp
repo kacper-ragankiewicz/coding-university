@@ -230,11 +230,14 @@ int main() {
 
     cout << average << endl;
 
-    // if (countNotDone / ((int)average * 30) < 2 ) {
-    //     time = (to_string(countNotDone / (int)average) + " days");
-    // } else {
-    //     time = (to_string(countNotDone / ((int)average * 30)) + " months");
-    // }
+    if ( average == 0 ) {
+        time = " infinite.";
+    } else if (countNotDone / ((int)average * 30) < 2 ) {
+        time = (to_string(countNotDone / (int)average) + " days");
+    } else {
+        time = (to_string(countNotDone / ((int)average * 30)) + " months");
+    }
+
 
     if( git == true ) {
         gitPush((to_string(day) + "/" + monthStr + '/' + to_string(year)));
