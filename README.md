@@ -29,7 +29,7 @@ $ chmod +x main & ./main
 
 ### After marking on coding_university.md from "- [ ]" to "- [X]", run the script.
 
-The script will compare the value with the previous days and will tell you with such an average per day how many days you have left until the end of the script.
+The script will compare the value with the previous days and will tell you with such an average per day how many days you have left until the end of the coding_university.md.
 
 
 # **Architecture**
