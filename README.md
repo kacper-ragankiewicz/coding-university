@@ -37,12 +37,12 @@ The script will compare the value with the previous days and will tell you with 
 **main.cpp** *- its main c++ script where you can make changes*
 
 
-**coding_university.md** *- this is the source md file (you can swap it with your file and progres)*
+**coding_university.md** *- this is the source md file (you swap it with your file and progress)*
 
 **data.txt** *- it's where your date with progress is stored*
 
 ****algorithm.md** *- notes with basic implementation of useful algorithms*
 
-****algorithm_interview.md** *- notes with useful algorithms for leetcode and hackerrank*
+****algorithm_interview.md** *- notes with useful algorithms from leetcode and hackerrank*
 
 
