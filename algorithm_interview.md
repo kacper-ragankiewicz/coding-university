@@ -1,5 +1,6 @@
 # Checking if int is palindrome
 #Python
+```
 def isPalindrome(self, x: int) -> bool:
 	string = str(x)
 	n = len(string)
@@ -9,9 +10,10 @@ def isPalindrome(self, x: int) -> bool:
 		return False
 
 	return True
-	
+```
 # Checking for pair where (n,n + 1 ) then return max len of elements in array
 #Python
+```
 def pickingNumbers(a):
     a = sorted(a)
     n = len(a)
@@ -30,9 +32,10 @@ def pickingNumbers(a):
         max_length = max(max_length, current_length)  # Update the maximum length
     
     return max_length
-    
+``` 
 # Counting how many pages need to be swapped to get od direction when if p > mid, n - i
 #Python
+```
 def pageCount(n, p):
     
     mid = n // 2
@@ -63,9 +66,10 @@ def pageCount(n, p):
             count += 1   
   
     return count
-    
+```
 # Creating ZigZag sequence from numbers in an array
 #Python
+```
 def findZigZagSequence(a, n):
     a.sort()
     mid = int((n - 1)/2)
@@ -84,9 +88,10 @@ def findZigZagSequence(a, n):
         else:
             print(a[i], end = ' ')
     return
-    
+```
 # Checking if givern numbers can make triangle
 #Python
+```
 def maximumPerimeterTriangle(sticks):
     sticks = sorted(sticks)
     n = len(sticks)
@@ -109,9 +114,10 @@ def maximumPerimeterTriangle(sticks):
         return (-1,)
     else:
         return tria[index]
-        
+```     
 # Looking for pairs in the numbers in an array
 #Python
+```
 def sockMerchant(n, ar):
     sock_count = {}
     pairs = 0
@@ -125,9 +131,10 @@ def sockMerchant(n, ar):
         pairs += count//2
         
     return pairs
-    
-#making XOR from input, in example for binary
+```
+# Making XOR from input, in example for binary
 #Python
+```
 def strings_xor(s, t):
     res = ""
     for i in range(len(s)):
@@ -137,14 +144,17 @@ def strings_xor(s, t):
             res += '1';
 
     return res
-
+```
 # Checking if the sum of the values (number if values depends on the month) is sum of a day
 #Python
+```
 def birthday(s, d, m):
     ways = [sum(s[i:i+m]) for i in range(len(s)-m+1)]
     return ways.count(d)
-    
+```
 # Array permutation, checking if A[i] + B[i] > k
+#Python
+```
 def twoArrays(k, A, B):
 
     sA = sorted(A,reverse=True)
@@ -155,9 +165,10 @@ def twoArrays(k, A, B):
             return "NO"
   
     return "YES"
-    
+``` 
 # Adding two numbers in linked list
 #Python
+```
 def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 	head = None
 	temp = None
@@ -183,9 +194,10 @@ def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 	if carry > 0:
 	    temp.next = ListNode(carry)
 	return head
-	
+```
 # Longest substring
 #Python
+```
 def lengthOfLongestSubstring(self, s: str):
 	max_len = 0
 	current_len = 0
@@ -201,9 +213,10 @@ def lengthOfLongestSubstring(self, s: str):
 	    max_len = max(current_len, max_len)
 
 	return max_len
-	
+```
 # Checikg mediana for two arrays
 #Python
+```
 def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         merged_arr = sorted(nums1 + nums2)
         length = len(merged_arr)
@@ -211,9 +224,10 @@ def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
             return (merged_arr[length//2] + merged_arr[length//2 - 1]) / 2
         else:
             return merged_arr[length//2]
-            
+```         
 # Longest paliandrom substring
 #Python
+```
 def longestPalindrome(self, s: str) -> str:
         if s == s[::-1]:
             return s
@@ -228,9 +242,10 @@ def longestPalindrome(self, s: str) -> str:
                 size += 1
                 start = l
         return s[start: start + size]
-        
-#Zig zack convertion for string
+```     
+# Zig zack convertion for string
 #Python
+```
 def convert(self, s: str, numRows: int) -> str:
         if s is None and numRows <= 0:
             return ""
@@ -246,9 +261,10 @@ def convert(self, s: str, numRows: int) -> str:
                 if i != 0 and i != numRows - 1 and (j + step - 2 * i) < len(s):
                     result += s[j + step - 2 * i]
         return result
-        
+```        
 # Revering int
 #Python
+```
 def reverse(self, x: int) -> int:
         maxInt = 2 ** 31 - 1
         minInt = -1 * 2 ** 31
@@ -258,9 +274,10 @@ def reverse(self, x: int) -> int:
         if revInt > maxInt or revInt < minInt:
             return 0
         return revInt
-        
+```
 # Atoi funtion
 #Python
+```
 def myAtoi(self, s: str) -> int:
         if s is None or len(s) < 1:
             return 0
@@ -285,10 +302,11 @@ def myAtoi(self, s: str) -> int:
         if number > INT_MAX:
             return INT_MAX
         return number
-        
-# Checking for start position if two kangarus will land at the same place after some time {
+```       
+# Checking for start position if two kangarus will land at the same place after some time
 
-# Python
+#Python
+```
 	def kangaroo(x1, v1, x2, v2):
 	    i = 0
 	    sum1 = x1
@@ -301,8 +319,9 @@ def myAtoi(self, s: str) -> int:
 		    return "YES"
 		i += 1
 	    return "NO"
-           
-# C++
+```           
+#C++
+```
 	string kangaroo(int x1, int v1, int x2, int v2) {
 	    int sum1 = x1;
 	    int sum2 = x2;
@@ -320,10 +339,11 @@ def myAtoi(self, s: str) -> int:
 	}
 	
 }
+```
+# Checking if the number is an palindrome
 
-# Checking if the number is an palindrome {
-
-# Python
+#Python
+```
 	def isPalindrome(self, x: int) -> bool:
 		string = str(x)
 		n = len(string)
@@ -333,15 +353,17 @@ def myAtoi(self, s: str) -> int:
 			return False
 
 	return True
-# Python [Optimazed]
+```
+#Python [Optimazed]
+```
     def isPalindrome(self, x: int) -> bool:
         x = str(x)
         return x == x[::-1]
-}
+```
 
-# Checking if string is matching to the pathern {
-
-# Python [Requrention]
+# Checking if string is matching to the pathern
+#Python [Requrention]
+```
 def isMatch(self, s: str, p: str) -> bool:
         memo = {}
     
@@ -363,10 +385,10 @@ def isMatch(self, s: str, p: str) -> bool:
             return ans
     
         return dp(0, 0)
-
-# Python [Library]
+```
+#Python [Library]
+```
 import re
-    
 def isMatch(self, s: str, p: str) -> bool:
         pattern = "^" + p + "$"
         match = re.match(pattern, s)
@@ -375,12 +397,11 @@ def isMatch(self, s: str, p: str) -> bool:
         else:
             return False
 
+```
 
-
-}
-
-# Binary Search {
-# Python
+# Binary Search
+#Python
+```
 def binary_search(arr, target):
 	left = 0
 	right = len(arr) - 1
@@ -394,8 +415,9 @@ def binary_search(arr, target):
 		else:
 			right = mid - 1
 	return -1
-	
-# Python [recursive]
+```
+#Python [recursive]
+```
 def binary_search(arr, target, left right):
 	if left > right:
 		return -1
@@ -407,10 +429,10 @@ def binary_search(arr, target, left right):
 		return binary_search(arr, target, mid+1, right)
 	else:
 		return binary_search(arr, target, left, mid-1)
-}
-
-# Bubble Sort {
-# Python
+```
+# Bubble Sort
+#Python
+```
 def buble_sort(arr):
     n = len(arr)
     for i in range(n):
@@ -418,8 +440,9 @@ def buble_sort(arr):
             if arr[j] > arr[j+1]:
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return(arr)
-   
-# Python [recursive]
+```
+#Python [recursive]
+```
 def bubble_sort(arr):
     n = len(arr)
 
@@ -436,11 +459,10 @@ def bubble_sort(arr):
     bubble_sort(arr[:n - 1])
 
     return arr 
+```
 
-}
-
-# Binary Trees {
-
+# Binary Trees
+```
 graph = {
 'A' : ['B', 'G'],
 'B' : ['C', 'D', 'E'],
@@ -453,7 +475,7 @@ graph = {
 'I' : [],
 }
 
-# Python Breadth-First Search
+#Python Breadth-First Search
 def bfs(graph, node):
 	visited = []
 	queue = []
@@ -488,9 +510,11 @@ def dfs(graph, node):
 			if n not in visited:
 				visited.append(n)
 				stack.append(n)
-}
+```
 
-# Separate the numbers and check if they are beutifule {
+# Separate the numbers and check if they are beutifule
+#Python
+```
 def separateNumbers(s):    
     if len(s)==1:
         print("NO")
@@ -506,9 +530,11 @@ def separateNumbers(s):
             print("YES", s[:i])
             return    
     print("NO")
-}
+```
 
 # Getting thr biggest field of value for graf:
+#Python
+```
 def maxArea(self, height: List[int]) -> int:
         left,right,answer=0,len(height)-1,0
         while left<=right:
@@ -519,9 +545,10 @@ def maxArea(self, height: List[int]) -> int:
             else:
                 right-=1
         return answer
-        
+```        
 # Looking for pairs that have min difference between them in an array
-# Python
+#Python
+```
 def closestNumbers(arr):
     arr = sorted(arr)
     n = len(arr)
@@ -543,9 +570,10 @@ def closestNumbers(arr):
             array.append(seen[i][0])
             array.append(seen[i][1])
     return array
-    
+```
 # Coverting int to roman numbers:
-# Python hash table
+#Python [Hash Table]
+```
 def romanToInt(self, s: str) -> int:
         roman={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
         number=0
@@ -555,10 +583,10 @@ def romanToInt(self, s: str) -> int:
             else:
                 number+=roman[s[i]]
         return number+roman[s[-1]]
-        
+```        
 # Checking the longest char patern in the array of strings
-
-# Python
+#Python
+```
 def longestCommonPrefix(v: List[str]) -> str:
 	ans = ""
 	v = sorted(v)
@@ -570,8 +598,10 @@ def longestCommonPrefix(v: List[str]) -> str:
 			return ans
 		ans += first[i]
 	return ans
-	
+```	
 # Caesar Cipher
+#Python
+```
 def caesarCipher(s, k):
     a="abcdefghijklmnopqrstuvwxyz"
     k=k%26
@@ -590,9 +620,10 @@ def caesarCipher(s, k):
         else:
             d=d+i         
     return d 
-
+```
 # Checking two sum in na array
-# Python
+#Python
+```
 from collections import defaultdict
 
 class Solution:
@@ -624,5 +655,5 @@ class Solution:
                         if -j-j2 in set2:
                             result.append((j, j2, -j-j2))
         return result
-
+```
 
