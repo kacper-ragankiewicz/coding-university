@@ -21,14 +21,13 @@ $ chmod +x main & ./main
 ```
 
 # **Staring new count**
-
 ### To start new counting, remove **data.txt** and swap **coding_university.md** with yours.
 
 *To get new coding-university.md, visit  [jwasham / coding-interview-university](https://github.com/jwasham/coding-interview-university)*
 
 # **How to use it**
 
-### After marking on coding_university.md from " **- [ ]** " to " **- [X]** ", run the script.
+### After marking on coding_university.md from "- [ ]" to "- [X]", run the script.
 
 The script will compare the value with the previous days and will tell you with such an average per day how many days you have left until the end of the script.
 
