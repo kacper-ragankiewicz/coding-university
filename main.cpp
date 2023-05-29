@@ -231,7 +231,7 @@ int main() {
     cout << average << endl;
 
     if ( average == 0 ) {
-        time = " infinite.";
+        time = "infinite..";
     } else if (countNotDone / ((int)average * 30) < 2 ) {
         time = (to_string(countNotDone / (int)average) + " days");
     } else {
