@@ -228,6 +228,7 @@ int main() {
     average = averageCalc(done);
     string time = "";
 
+    cout << average << endl;
 
     // if (countNotDone / ((int)average * 30) < 2 ) {
     //     time = (to_string(countNotDone / (int)average) + " days");
