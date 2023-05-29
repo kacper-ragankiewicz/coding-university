@@ -19,11 +19,22 @@ or just run it using:
 ```
 $ chmod +x main & ./main
 ```
+# **Starting your count**
+### Init new repo with git init and push it to your Github.
 
-# **Starting new count**
-### To start new counting, remove **data.txt** and swap **coding_university.md** with yours.
+After first git push, every time when you run script, changes while automatically synchronize.
 
-*To get new coding-university.md, visit  [jwasham / coding-interview-university](https://github.com/jwasham/coding-interview-university)*
+```
+$ sudo rm -r .git/
+$ git init
+$ git remote add origin git@github.com:<YOUR_NAME>/<NAME_OF_YOUR_REPO>.git
+$ git branch -M main
+$ git add .
+$ git commit -m "First init"
+$ git push -u origin main
+```
+
+*To get new or other coding-university.md, visit  [jwasham / coding-interview-university](https://github.com/jwasham/coding-interview-university)*
 
 # **How to use it**
 
@@ -40,6 +51,8 @@ Print at the end something similar to this:
 
 # **Architecture**
 
+**main** *- exe file for linux*
+
 **main.cpp** *- its main c++ script where you can make changes*
 
 
@@ -47,8 +60,5 @@ Print at the end something similar to this:
 
 **data.txt** *- it's where your date with progress is stored*
 
-****algorithm.md** *- notes with basic implementation of useful algorithms (in progress)*
-
-****algorithm_interview.md** *- notes with useful algorithms from leetcode and hackerrank (in progress)*
 
 
