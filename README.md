@@ -41,8 +41,8 @@ The script will compare the value with the previous days and will tell you with 
 
 **data.txt** *- it's where your date with progress is stored*
 
-****algorithm.md** *- notes with basic implementation of useful algorithms*
+****algorithm.md** *- notes with basic implementation of useful algorithms (in progress)*
 
-****algorithm_interview.md** *- notes with useful algorithms from leetcode and hackerrank*
+****algorithm_interview.md** *- notes with useful algorithms from leetcode and hackerrank (in progress)*
 
 
