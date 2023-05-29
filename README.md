@@ -20,7 +20,7 @@ or just run it using:
 $ chmod +x main & ./main
 ```
 
-# **Staring new count**
+# **Starting new count**
 ### To start new counting, remove **data.txt** and swap **coding_university.md** with yours.
 
 *To get new coding-university.md, visit  [jwasham / coding-interview-university](https://github.com/jwasham/coding-interview-university)*
