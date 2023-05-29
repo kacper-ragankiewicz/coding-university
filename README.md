@@ -31,6 +31,12 @@ $ chmod +x main & ./main
 
 The script will compare the value with the previous days and will tell you with such an average per day how many days you have left until the end of the coding_university.md.
 
+Print at the end something similar to this:
+```
+>>> You have done: 80 and there is: 420 left.
+>>> You do average: 3 per day, and in that speed, you will finish in: 4 months.
+```
+
 
 # **Architecture**
 
