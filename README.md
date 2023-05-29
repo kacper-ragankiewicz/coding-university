@@ -20,7 +20,9 @@ or just run it using:
 $ chmod +x main & ./main
 ```
 # **Starting your count**
+## >> If you don't have git, program will still works, but without synchronization.
 ### Init new repo with git init and push it to your Github.
+
 
 After first git push, every time when you run script, changes while automatically synchronize.
 
