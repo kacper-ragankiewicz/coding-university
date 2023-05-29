@@ -238,7 +238,6 @@ int main() {
         time = (to_string(countNotDone / ((int)average * 30)) + " months");
     }
 
-
     if( git == true ) {
         gitPush((to_string(day) + "/" + monthStr + '/' + to_string(year)));
     }
