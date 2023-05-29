@@ -2,7 +2,7 @@
 
 Script is written in C++
 
-## remove data.txt from yours and swap the coding-university.md
+** remove data.txt and swap the coding-university.md to make a clear count for you **
 
 To compile it from .cpp, you need to have gcc installed.
 
