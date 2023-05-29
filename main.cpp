@@ -226,16 +226,14 @@ int main() {
     }
 
     average = averageCalc(done);
-
-
     string time = "";
 
-    if (countNotDone / ((int)average * 30) < 2 ) {
-        time = (to_string(countNotDone / (int)average) + " days");
-    } else {
-        time = (to_string(countNotDone / ((int)average * 30)) + " months");
-    }
 
+    // if (countNotDone / ((int)average * 30) < 2 ) {
+    //     time = (to_string(countNotDone / (int)average) + " days");
+    // } else {
+    //     time = (to_string(countNotDone / ((int)average * 30)) + " months");
+    // }
 
     if( git == true ) {
         gitPush((to_string(day) + "/" + monthStr + '/' + to_string(year)));
