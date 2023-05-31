@@ -705,7 +705,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - [ ] [Basic Operations (wideo)](https://www.coursera.org/learn/data-structures/lecture/0g1dl/basic-operations)
     - [ ] [Complete Binary Trees (wideo)](https://www.coursera.org/learn/data-structures/lecture/gl5Ni/complete-binary-trees)
     - [ ] [Pseudocode (wideo)](https://www.coursera.org/learn/data-structures/lecture/HxQo9/pseudocode)
-    - [ ] [Heap Sort - jumps to start (wideo)](https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=3291)
+    - [X] [Heap Sort - jumps to start (wideo)](https://youtu.be/odNJmw5TOEE?list=PLFDnELG9dpVxQCxuD-9BSy2E7BWY3t5Sm&t=3291)
     - [ ] [Heap Sort (wideo)](https://www.coursera.org/learn/data-structures/lecture/hSzMO/heap-sort)
     - [ ] [Building a heap (wideo)](https://www.coursera.org/learn/data-structures/lecture/dwrOS/building-a-heap)
     - [ ] [MIT: Heaps and Heap Sort (wideo)](https://www.youtube.com/watch?v=B7hVxCmfPtM&index=4&list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb)
@@ -781,7 +781,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - [X] [Quick sort in 4 minutes (video)](https://youtu.be/Hoixgm4-P4M)
     - [X] [Heap sort in 4 minutes (video)](https://youtu.be/2DmK_H7IdTo)
     - [X] [Merge sort in 3 minutes (video)](https://youtu.be/4VqmGXwpLqc)
-    - [ ] [Bubble sort in 2 minutes (video)](https://youtu.be/xli_FI7CuzA)
+    - [X] [Bubble sort in 2 minutes (video)](https://youtu.be/xli_FI7CuzA)
     - [ ] [Selection sort in 3 minutes (video)](https://youtu.be/g-PGLbMth_g)
     - [ ] [Insertion sort in 2 minutes (video)](https://youtu.be/JU767SDMDvA)
 
