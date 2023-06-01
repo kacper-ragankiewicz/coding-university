@@ -782,12 +782,12 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - [X] [Heap sort in 4 minutes (video)](https://youtu.be/2DmK_H7IdTo)
     - [X] [Merge sort in 3 minutes (video)](https://youtu.be/4VqmGXwpLqc)
     - [X] [Bubble sort in 2 minutes (video)](https://youtu.be/xli_FI7CuzA)
-    - [ ] [Selection sort in 3 minutes (video)](https://youtu.be/g-PGLbMth_g)
+    - [X] [Selection sort in 3 minutes (video)](https://youtu.be/g-PGLbMth_g)
     - [ ] [Insertion sort in 2 minutes (video)](https://youtu.be/JU767SDMDvA)
 
 - [ ] Implement:
     - [ ] Mergesort: O(n log n) average and worst case
-    - [ ] Quicksort O(n log n) average case
+    - [X] Quicksort O(n log n) average case
     - Selection sort and insertion sort are both O(n^2) average and worst case
     - For heapsort, see Heap data structure above.
 
