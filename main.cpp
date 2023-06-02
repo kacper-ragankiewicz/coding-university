@@ -192,6 +192,7 @@ int main() {
 
     int day = ltm->tm_mday;
     int month = 1 + ltm->tm_mon;
+    string dayStr = (day < 10) ? "0" + to_string(day) : to_string(day);
     string monthStr = (month < 10) ? "0" + to_string(month) : to_string(month);
     int year = 1900 + ltm->tm_year;
 
@@ -218,7 +219,7 @@ int main() {
 
     if ( marked == false ) {
         count = countDone;
-        done.insert({(to_string(day) + "/" + monthStr + '/' + to_string(year)), count});
+        done.insert({(dayStr + "/" + monthStr + '/' + to_string(year)), count});
         // done[(to_string(day) + "/" + monthStr + '/' + to_string(year))] = count;
         writeFile(done);
     } else {
@@ -238,7 +239,7 @@ int main() {
 
 
     if( git == true ) {
-        gitPush((to_string(day) + "/" + monthStr + '/' + to_string(year)));
+        gitPush((dayStr + "/" + monthStr + '/' + to_string(year)));
     }
 
     cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
