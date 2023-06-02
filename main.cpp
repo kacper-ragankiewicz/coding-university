@@ -215,12 +215,12 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    sortMapByDate(done);
 
     if ( marked == false ) {
         count = countDone;
         done.insert({(dayStr + "/" + monthStr + '/' + to_string(year)), count});
         // done[(to_string(day) + "/" + monthStr + '/' + to_string(year))] = count;
+        sortMapByDate(done);
         writeFile(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
