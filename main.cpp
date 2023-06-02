@@ -164,7 +164,7 @@ bool dateComparator(const string& date1, const string& date2) {
 
     cout << sortableDate1 << " " << sortableDate2 <<endl;
 
-    return sortableDate1 < sortableDate2;
+    return sortableDate1 > sortableDate2;
 }
 
 void sortMapByDate(map<string, int>& data) {
