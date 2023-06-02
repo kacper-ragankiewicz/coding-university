@@ -783,7 +783,7 @@ Napisz kod na tablicy lub papierze, a nie na komputerze. Testuj z niektórymi pr
     - [X] [Merge sort in 3 minutes (video)](https://youtu.be/4VqmGXwpLqc)
     - [X] [Bubble sort in 2 minutes (video)](https://youtu.be/xli_FI7CuzA)
     - [X] [Selection sort in 3 minutes (video)](https://youtu.be/g-PGLbMth_g)
-    - [ ] [Insertion sort in 2 minutes (video)](https://youtu.be/JU767SDMDvA)
+    - [X] [Insertion sort in 2 minutes (video)](https://youtu.be/JU767SDMDvA)
 
 - [ ] Implement:
     - [ ] Mergesort: O(n log n) average and worst case
