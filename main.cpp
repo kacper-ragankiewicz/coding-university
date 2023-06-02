@@ -162,6 +162,8 @@ bool dateComparator(const string& date1, const string& date2) {
     int sortableDate1 = stoi(date1.substr(6, 4) + date1.substr(3, 2) + date1.substr(0, 2));
     int sortableDate2 = stoi(date2.substr(6, 4) + date2.substr(3, 2) + date2.substr(0, 2));
 
+    cout << sortableDate1 << " " << sortableDate2 <<endl;
+
     return sortableDate1 < sortableDate2;
 }
 
