@@ -215,7 +215,7 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    sortMapByDate(done);
+    // sortMapByDate(done);
 
     if ( marked == false ) {
         count = countDone;
