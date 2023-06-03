@@ -9,6 +9,26 @@
 
 using namespace std;
 
+struct DateComparator {
+    bool operator()(const std::string& date1, const std::string& date2) const {
+        // Extract day, month, and year from the dates
+        int day1 = std::stoi(date1.substr(0, 2));
+        int month1 = std::stoi(date1.substr(3, 2));
+        int year1 = std::stoi(date1.substr(6, 4));
+
+        int day2 = std::stoi(date2.substr(0, 2));
+        int month2 = std::stoi(date2.substr(3, 2));
+        int year2 = std::stoi(date2.substr(6, 4));
+
+        // Compare year, month, and day in descending order
+        if (year1 != year2)
+            return year1 < year2;
+        if (month1 != month2)
+            return month1 < month2;
+        return day1 < day2;
+    }
+};
+
 int countCharacterSequence(const string& filename, const string& sequence) {
     ifstream file(filename);
     if (!file) {
@@ -67,7 +87,7 @@ void gitPush(string date) {
     return;
 }
 
-void readFile(map<string, int>& done) {
+void readFile(map<string, int, DateComparator>& done) {
     ifstream inputFile("date.txt");
     if (!inputFile) {
         cerr << "Failed to open the file for reading." << endl;
@@ -87,7 +107,7 @@ void readFile(map<string, int>& done) {
     inputFile.close();
 }
 
-void writeFile(map<string, int> done) {
+void writeFile(map<string, int, DateComparator> done) {
     ofstream outputFile("date.txt");
     if (!outputFile) {
         cerr << "Failed to open the file for writing." << endl;
@@ -100,7 +120,7 @@ void writeFile(map<string, int> done) {
     outputFile.close();
 }
 
-int averageCalc(const std::map<std::string, int>& done) {
+int averageCalc(const map<std::string, int, DateComparator>& done) {
     int sum = 0;
     int div = 1;
 
@@ -123,7 +143,7 @@ int averageCalc(const std::map<std::string, int>& done) {
     return average;
 }
 
-bool checkDate(map<string,int> done) {
+bool checkDate(map<string,int, DateComparator> done) {
     time_t now = time(0);
     tm *ltm = localtime(&now);
     bool marked = false;
@@ -165,7 +185,7 @@ bool dateComparator(const string& date1, const string& date2) {
     return sortableDate1 < sortableDate2;
 }
 
-void sortMapByDate(map<string, int>& data) {
+void sortMapByDate(map<string, int, DateComparator>& data) {
     vector<pair<string, int>> temp(data.begin(), data.end());
     std::stable_sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
         return dateComparator(a.first, b.first);
@@ -177,7 +197,7 @@ void sortMapByDate(map<string, int>& data) {
 }
 
 int main() {
-    map<string, int> done = {};
+    map<string, int, DateComparator> done = {};
     string filename = "coding_university.md";
     const char* gitCommand = "git config user.email";
 
@@ -192,6 +212,7 @@ int main() {
 
     int day = ltm->tm_mday;
     int month = 1 + ltm->tm_mon;
+    string dayStr = (day < 10) ? "0" + to_string(day) : to_string(day);
     string monthStr = (month < 10) ? "0" + to_string(month) : to_string(month);
     int year = 1900 + ltm->tm_year;
 
@@ -214,21 +235,21 @@ int main() {
     int countNotDone = countCharacterSequence(filename, markedNot);
     int countDone = countCharacterSequence(filename, markedDone);
 
-    sortMapByDate(done);
 
     if ( marked == false ) {
         count = countDone;
-        done.insert({(to_string(day) + "/" + monthStr + '/' + to_string(year)), count});
+        done.insert({(dayStr + "/" + monthStr + '/' + to_string(year)), count});
         // done[(to_string(day) + "/" + monthStr + '/' + to_string(year))] = count;
+        // sortMapByDate(done);
         writeFile(done);
     } else {
         cout << ">>> Already done, for edit, remove date from data.txt" << endl;
     }
 
     average = averageCalc(done);
-    string time = "";
 
-    cout << average << endl;
+
+    string time = "";
 
     if ( average == 0 ) {
         time = "infinite.. need at least two days";
@@ -238,8 +259,10 @@ int main() {
         time = (to_string(countNotDone / ((int)average * 30)) + " months");
     }
 
+
+
     if( git == true ) {
-        gitPush((to_string(day) + "/" + monthStr + '/' + to_string(year)));
+        gitPush((dayStr + "/" + monthStr + '/' + to_string(year)));
     }
 
     cout << ">>> You have done: " << countDone <<" and there is: " << countNotDone << " left." << endl;
