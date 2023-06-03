@@ -9,6 +9,26 @@
 
 using namespace std;
 
+struct DateComparator {
+    bool operator()(const std::string& date1, const std::string& date2) const {
+        // Extract day, month, and year from the dates
+        int day1 = std::stoi(date1.substr(0, 2));
+        int month1 = std::stoi(date1.substr(3, 2));
+        int year1 = std::stoi(date1.substr(6, 4));
+
+        int day2 = std::stoi(date2.substr(0, 2));
+        int month2 = std::stoi(date2.substr(3, 2));
+        int year2 = std::stoi(date2.substr(6, 4));
+
+        // Compare year, month, and day in descending order
+        if (year1 != year2)
+            return year1 < year2;
+        if (month1 != month2)
+            return month1 < month2;
+        return day1 < day2;
+    }
+};
+
 int countCharacterSequence(const string& filename, const string& sequence) {
     ifstream file(filename);
     if (!file) {
@@ -67,7 +87,7 @@ void gitPush(string date) {
     return;
 }
 
-void readFile(map<string, int>& done) {
+void readFile(map<string, int, DateComparator>& done) {
     ifstream inputFile("date.txt");
     if (!inputFile) {
         cerr << "Failed to open the file for reading." << endl;
@@ -87,7 +107,7 @@ void readFile(map<string, int>& done) {
     inputFile.close();
 }
 
-void writeFile(map<string, int> done) {
+void writeFile(map<string, int, DateComparator> done) {
     ofstream outputFile("date.txt");
     if (!outputFile) {
         cerr << "Failed to open the file for writing." << endl;
@@ -100,7 +120,7 @@ void writeFile(map<string, int> done) {
     outputFile.close();
 }
 
-int averageCalc(const map<std::string, int>& done) {
+int averageCalc(const map<std::string, int, DateComparator>& done) {
     int sum = 0;
     int div = 1;
 
@@ -123,7 +143,7 @@ int averageCalc(const map<std::string, int>& done) {
     return average;
 }
 
-bool checkDate(map<string,int> done) {
+bool checkDate(map<string,int, DateComparator> done) {
     time_t now = time(0);
     tm *ltm = localtime(&now);
     bool marked = false;
@@ -167,7 +187,7 @@ bool dateComparator(const string& date1, const string& date2) {
     return sortableDate1 < sortableDate2;
 }
 
-void sortMapByDate(map<string, int>& data) {
+void sortMapByDate(map<string, int, DateComparator>& data) {
     vector<pair<string, int>> temp(data.begin(), data.end());
     std::stable_sort(temp.begin(), temp.end(), [](const auto& a, const auto& b) {
         return dateComparator(a.first, b.first);
@@ -179,7 +199,7 @@ void sortMapByDate(map<string, int>& data) {
 }
 
 int main() {
-    map<string, int> done = {};
+    map<string, int, DateComparator> done = {};
     string filename = "coding_university.md";
     const char* gitCommand = "git config user.email";
 
