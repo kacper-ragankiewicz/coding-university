@@ -4,6 +4,10 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/2119bff7ed5645f4ba4313772aff14de)](https://app.codacy.com/gh/kacper-ragankiewicz/coding-university/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
+
+<br/>
+
+
 # Tracking your progress in *coding-interview-university* with Github.
 
 ## ***>>> Script doesn't work if you don't stay in track daily!!***
