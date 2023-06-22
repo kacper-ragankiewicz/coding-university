@@ -61,7 +61,7 @@ void gitPull() {
     return;
 }
 
-void gitPush(string date) {
+void gitPush(const string date) {
     const string gitCommitString = "git commit -m '" + date +"' --quiet ";\
     const char* gitCommit = gitCommitString.c_str();
     const char* gitCommand = "git add .";
